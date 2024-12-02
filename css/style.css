@@ -1,0 +1,164 @@
+/** Some Variables */
+:root {
+    --Light-grey: hsl(0, 0%, 86%);
+    --Smokey-grey: hsl(0, 1%, 44%);
+    --Off-black: hsl(0, 0%, 8%);
+    --Off-white: hsl(0, 0%, 94%);
+    --White: hsl(0, 0%, 100%);
+    --Purple: hsl(259, 100%, 65%);
+    --Light-red: hsl(0, 100%, 67%);
+}
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", serif;
+}
+body {
+    background-color: var(--Off-white);
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container {
+    width: 570px;
+    margin: auto 20px;
+    background-color: var(--White);
+    padding: 25px;
+    border-radius: 15px;
+    border-bottom-right-radius: 95px;
+    box-shadow: 0px 0px 22px 8px var(--Light-grey);
+}
+@media (max-width: 767px) {
+    .container {
+        max-width: 375px;
+        margin: 20px 15px;
+        padding-right: 20px;
+    }
+}
+form {
+    position: relative;
+    padding: 20px 15px 45px;
+    display: flex;
+    margin-bottom: 20px;
+    gap: 30px;
+    border-bottom: 1px solid var(--Light-grey);
+}
+@media (max-width: 767px) {
+    form {
+        gap: 15px;
+        padding: 0px 0px 30px;
+    }
+}
+form .field {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+form .field label {
+    text-transform: uppercase;
+    letter-spacing: 2.2px;
+    color: var(--Smokey-grey);
+    font-weight: bold;
+    font-size: 0.7rem;
+}
+form .field input {
+    border: 1px solid var(--Light-grey);
+    outline: none;
+    height: 2rem;
+    max-width: 120px;
+    padding: 25px 15px;
+    font-size: 1.5rem;
+    color: var(--Off-black);
+    font-weight: bold;
+    caret-color: var(--Purple);
+    border-radius: 5px;
+    z-index: 2;
+}
+@media (max-width: 767px) {
+    form .field input {
+        max-width: 100px;
+    }
+}
+form .field input:focus {
+    border-color: var(--Purple);
+}
+form .field input::placeholder {
+    color: var(--Smokey-grey);
+    font-size: 1.5rem;
+}
+ button {
+    background-color: var(--Off-black);
+    border: none;
+    outline: none;
+    border-radius: 50%;
+    width: 70px;
+    padding: 12px;
+    cursor: pointer;
+    position: absolute;
+    top: 80%;
+    left: 85%;
+    transition: all 0.4s;
+}
+button:hover {
+    background-color: var(--Purple);
+}
+button img {
+    width: 70%;
+}
+@media (max-width: 767px) {
+    button {
+        width: 55px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    button img {
+        width: 85%;
+    }
+}
+.result {
+    display: flex;
+    flex-direction: column;
+    padding: 12px;
+    margin-top: 10px;
+    font-size: 4.5rem;
+    font-style: italic;
+    font-weight: bold;
+    color: var(--Off-black);
+    letter-spacing: -3px;
+    line-height: 1.1;
+}
+@media (max-width: 767px) {
+    .result {
+        font-size: 3.6rem;
+        padding: 20px;
+    }
+}
+.result div {
+    padding-left: 20px;
+}
+@media (max-width: 767px) {
+    .result div {
+        padding-left: 0;
+    }
+}
+.result .num {
+    color: var(--Purple);
+}
+.error {
+    color: var(--Light-red);
+    font-size: .65rem;
+    font-style: italic;
+    text-transform: capitalize;
+    max-width: 120px;
+    transform: translateY(-20px);
+    transition: all .4s;
+}
+@media (max-width: 767px) {
+    .error {
+        transform: translateY(-37px);
+        max-width: 100px;
+    }
+}
